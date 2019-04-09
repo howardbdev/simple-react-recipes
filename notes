@@ -1,3 +1,4 @@
 2019-04-9
 
 - add redux!
+- note that this app is silly with redux... redux is a powerful state management tool for complex applications.. adding redux here makes no sense outside the context of demonstration and practice :D 
