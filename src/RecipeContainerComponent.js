@@ -36,10 +36,9 @@ class RecipeContainerComponent extends React.Component {
   }
 
   componentDidMount(){
-    console.log("before setState, state was ..", this.state)
     this.setState({
       recipes: recipes
-    }, ()=> console.log("new state is ..", this.state))
+    })
   }
 
   handleClick(event){
@@ -58,7 +57,7 @@ class RecipeContainerComponent extends React.Component {
 
   render() {
     const recipes = this.state.sorted ? this.sortedRecipes() : this.state.recipes
-    const recipeCards = recipes.map(recipe => <RecipeCard recipe={ recipe }/>)
+    const recipeCards = recipes.map(recipe => <RecipeCard key={recipe.name} recipe={ recipe }/>)
 
     return (
       <div>
