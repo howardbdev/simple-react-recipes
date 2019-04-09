@@ -8,14 +8,20 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux'
 
 // ******** probably move this to another file **************
-const initialState = []
+const initialState = {
+  recipes: [],
+  myName: ""
+}
 
-const reducer = (initialState, action) => {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "GET_RECIPES_SUCCESS":
-      return action.recipes
+      return {
+        ...state,
+        recipes: action.recipes
+      }
     default:
-      return initialState;
+      return state;
   }
 }
 // ************ and export it from there, import it here *****
